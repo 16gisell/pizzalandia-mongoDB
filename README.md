@@ -1,4 +1,4 @@
-<h1><a href="https://pizzagiss-frond.herokuapp.com/">Pizzalandia MongoDB</a></h1>
+<h1><a href="https://pizzalandia-mongodb-fron.herokuapp.com/">Pizzalandia MongoDB</a></h1>
 
 <p>Pizzalandia es un proyecto de muestra solo a modo practica, utilizando Angular-8 para front-end 
 y Node.js para trabajar los modulos de backend y crear peticiones REST-API para trabajar con la base de datos en este caso MongoDB</p>
