@@ -1,0 +1,55 @@
+<section class="menusCombos">
+    <div class="container">
+        <form [formGroup]="ngForm" (ngSubmit)="Buscardor()" novalidate>
+            <div class="input-group">                
+                <div class="form-outline">                    
+                    <input id="search-focus"  formControlName="codigo" type="search" id="codigo"  name="codigo" class="form-control" [(ngModel)]="buscar.codigo" placeholder="Buscar codigo" />                    
+                </div>
+                <button type="submit" class="btn btn-primary">buscar </button>                
+            </div>
+        </form> 
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12" *ngFor="let ordenes of buscados">
+                <div class="card card-coin card-plain" *ngIf="ordenes.Tipo_factura == 'Espera' && ordenes.codigo_pedido == encontrado">
+                    <img src="../../../assets/image/pizzalogo2.png" class="card-img-top img_factura">
+                    <div class="card-header">
+                        <h1 style="text-align: center;" class="text-titilo-primary">{{ordenes.tipoMenu}}</h1>
+                    </div>
+                    <div class="card-body">
+                        <p class="text_description">Descripcion: <span class="text_description_text">{{ordenes.Elementos}}</span></p>
+                        <p class="text_description">Cantidad: <span class="text_description_text">{{ordenes.cantidad}}</span></p>
+                        <p class="text_description" *ngIf="ordenes.ingredientesExtra != ''">Ingredientes extras: <span class="text_description_text">{{ordenes.ingredientesExtra}}</span></p>
+                        <p class="text_description">Nombre cliente: <span class="text_description_text">{{ordenes.name_usuario}}</span></p>
+                        <p class="text_description">codigo del Pedido: <span class="text_description_text" style="color: #ffb100; text-transform: none;">{{ordenes.codigo_pedido}}</span></p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button (click)="Entregado(ordenes._id)" type="button" class="btn btn-info btn-block btn-selection-entrega">Entregado</button>
+                        <button (click)="Cancelado(ordenes._id)" type="button"  class="btn btn-info btn-block btn-selection-cancelado">Cancelado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let ordenes of pedidos">
+                <div class="card card-coin card-plain" *ngIf="ordenes.Tipo_factura == 'Espera'">
+                    <img src="../../../assets/image/pizzalogo2.png" class="card-img-top img_factura">
+                    <div class="card-header">
+                        <h1 style="text-align: center;" class="text-titilo-primary">{{ordenes.tipoMenu}}</h1>
+                    </div>
+                    <div class="card-body">
+                        <p class="text_description">Descripcion: <span class="text_description_text">{{ordenes.Elementos}}</span></p>
+                        <p class="text_description">Cantidad: <span class="text_description_text">{{ordenes.cantidad}}</span></p>
+                        <p class="text_description" *ngIf="ordenes.ingredientesExtra != ''">Ingredientes extras: <span class="text_description_text">{{ordenes.ingredientesExtra}}</span></p>
+                        <p class="text_description">Nombre cliente: <span class="text_description_text">{{ordenes.name_usuario}}</span></p>
+                        <p class="text_description">codigo del Pedido: <span class="text_description_text" style="color: #ffb100; text-transform: none;">{{ordenes.codigo_pedido}}</span></p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button (click)="Entregado(ordenes._id)" type="button" class="btn btn-info btn-block btn-selection-entrega">Entregado</button>
+                        <button (click)="Cancelado(ordenes._id)" type="button"  class="btn btn-info btn-block btn-selection-cancelado">Cancelado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

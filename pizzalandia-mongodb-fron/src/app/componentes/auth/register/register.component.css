@@ -1,0 +1,27 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #44342b75;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+.btn-selection {
+    color: #fff;
+    background-color: #ffa700;
+    border-color: #ff5400;
+    box-shadow: 2px 2px 5px #ff5400;
+}
+.btn-selection:hover {
+    background-color: #ff5400;
+}
+.title-register{
+    color: white;
+    font-size: 37px;
+}
+.enlace{
+    color: white;
+}

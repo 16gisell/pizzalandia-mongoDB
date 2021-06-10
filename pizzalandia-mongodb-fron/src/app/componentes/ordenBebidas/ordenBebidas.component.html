@@ -1,0 +1,110 @@
+<section class="ordenCombo">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="card-menus">
+                    <div class="card">
+                        <div class="card-header text-white de-flex justify-content-between align-items-center">
+                            <img src="../../../assets/image/bebidas1.png" class=" img-center img-fluid">
+                            <h1 style="text-align: center;" class="text-titilo-primary">{{combo.nombreBebidas}}</h1>
+                        </div>
+                        <div class="card-body">
+                            <p class="text_description">Contenido : <span class="text_description_text">{{combo.nombreBebidas}}</span></p>
+                            <p class="text_description">Precio: <span class="text_description_text">{{combo.precioBebidas}} $</span></p>
+                            <hr class="line-primary">
+                            <h1 class="title_description_factura">Datos extras</h1>
+                            <form [formGroup]="ngForm" (ngSubmit)="comprar()" novalidate>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="ncantidad" class="text_description">Cantidad de pedido: </label>
+                                        <input type="number" formControlName="cantidad" id="ncantida" (change)="checkChange($event)" [(ngModel)]="facturar.cantidad" >                                        
+                                        <div>
+                                            <p *ngIf="this.ngForm.get('cantidad').errors?.required" class="alert alert-danger">
+                                                (agregue la cantidad que desea comprar)
+                                            </p>
+                                        </div>  
+                                        <p class="text_description" >Necesitamos tus datos para la entrega del pedido: </p>
+                                        <div class="form-group">
+                                            <input type="text" name="nombre" id="nombre" formControlName="nombre" class="form-control" placeholder="nombre" [(ngModel)]="facturar.name_usuario" required>
+                                            <div>
+                                                <p *ngIf="this.ngForm.get('nombre').errors?.required" class="alert alert-danger">
+                                                    (El nombre no puede quedar vacío)
+                                                </p>
+                                            </div>                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="correo" id="correo" formControlName="correo" class="form-control" [(ngModel)]="facturar.correo"  placeholder="Correo" required>
+                                            <div>
+                                                <p *ngIf="this.ngForm.get('correo').errors?.required" class="alert alert-danger">
+                                                    (El correo no puede quedar vacío)
+                                                </p>
+                                                <p *ngIf="this.ngForm.get('correo').errors?.email" class="alert alert-danger">
+                                                    (El correo no es valido)
+                                                </p>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer" *ngIf="activo">
+                                    <button type="submit" class="btn btn-info btn-block btn-selection">facturar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="card-menus">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white de-flex justify-content-between align-items-center">
+                            <h1 style="text-align: center;" class="text-titilo-primary">Modelo de factura</h1>
+                        </div>
+                        <img src="../../../assets/image/pizzalogo2.png" class="card-img-top img_factura">
+                        <p class="title_Factura">pizzaGiss</p>
+                        <p class="direccion_factura">CC Giselandia, Miranda, Guaicaipuro Av. radio, calle 13, Despacho 5A</p>
+                        <p class="text_factura">TlF: 0212-0000000/ 0416-0000000</p>
+                        <p class="text_factura">Correo: pizzaGiss@pizzasparati.com</p>
+                        <p class="text_factura">n° Rif: J-000000030</p>
+                        <p class="text_factura">fecha: {{facturar.fechafactura}}</p>
+                        <div class="card-body">
+                            <p class="title_description_factura">Descripcion de la compra</p>
+                            <P style="line-height: 0.5;"><span class="text_description"> tipo de compra: </span> <span class="text_description_text">{{combo.nombreBebidas}}</span></P>
+                            <p style="line-height: 0.5;"><span class="text_description">Numero de Menu: </span> <span class="text_description_text">{{combo.idBebidas}}</span></p>
+                            <p style="line-height: 0.5;"><span class="text_description">Cantidad de compra: </span><span class="text_description_text">{{facturar.cantidad}}</span></p>
+                            <p style="line-height: 0.5;"><span class="text_description">Contenido: </span><span class="text_description_text">{{combo.nombreBebidas}}</span></p>
+                            <P style="line-height: 1.5;"><span class="text_description"> Nombre cliente: </span> <span class="text_description_text">{{facturar.name_usuario}}</span></P>
+                                    <P style="line-height: 0.5;"><span class="text_description"> Nombre cliente: </span> <span class="text_description_text">{{facturar.correo}}</span></P>
+                            <hr class="line-primary">
+                            <div class="card-body">
+                                <div class="form-group"> 
+                                    <h5 class="title_description_factura">Total a pagar: {{sumaTotal}} $</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="col-xs-6 col-sm-12 col-md-12">
+                                <div *ngIf="errors">
+                                    <div class="alert alert-danger" role="alert">
+                                        {{errors}}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div *ngIf="aprovP">
+                                    <div class="alert alert-success" role="alert">
+                                        {{aprovP}} Su codigo de pedido es: {{facturar.codigo_pedido}}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true" [routerLink]="['']">&times;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

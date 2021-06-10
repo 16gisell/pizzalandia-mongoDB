@@ -1,0 +1,136 @@
+.home{
+    margin: 0vh 0px 18vh 0vh;
+}
+.img-home1{
+    width: 60vw;
+    height: 90vh;
+    margin: 0px 0px 0px -10vw;
+}
+.text-home{
+    margin: 10vh 0px 0px 0px;
+    font-size: 25px;
+    color: white;
+    text-align: justify;
+}
+.title-menus{
+    font-size: 59px;
+    font-family: fantasy;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+    margin: 10vh 0px 8vh 0px;
+}
+.text-menus{
+    font-family: fantasy;
+    font-size: 40px;
+    color: #ffb100;
+    text-shadow: 1px 1px 3px black;
+}
+.text-pedido{
+    /* margin: 20vh 43vw 16vh 0vw; */
+    font-size: 25px;
+    color: white;
+    text-align: justify;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff38;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin-bottom: 25%;
+}
+
+.card-header {
+    margin: -50px auto 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.btn-selection {
+    color: #fff;
+    background-color: #ffa700;
+    border-color: #ff5400;
+    box-shadow: 2px 2px 5px #ff5400;
+}
+
+.btn-selection:hover {
+    background-color: #ff5400;
+}
+
+.text-titilo-primary {
+    text-align: center;
+    font-size: 27px;
+    text-transform: capitalize;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #9a7401;
+}
+
+.id-combo {
+    background-color: #90c473;
+    width: 13%;
+    border-radius: 50%;
+    text-align: center;
+    margin: -10% 1px 1px 80%;
+    font-size: 25px;
+}
+
+.text-titulo {
+    font-weight: bold;
+    text-shadow: 1px 1px aliceblue;
+}
+
+.img_factura {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.title_Factura {
+    text-align: center;
+    font-size: 27px;
+    text-transform: capitalize;
+    font-style: italic;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #9a7401;
+}
+
+.direccion_factura {
+    text-align: center;
+    line-height: normal;
+    color: #1ba2a2;
+}
+
+.text_factura {
+    text-align: center;
+    line-height: 0;
+    color: #1ba2a2;
+}
+
+.title_description_factura {
+    text-align: center;
+    font-size: 20px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.text_description {
+    vertical-align: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.text_description_text {
+    vertical-align: inherit;
+    color: #1ba2a2;
+}
+
+
+.modal-content{
+    background: #d06227 !important;
+    text-align: center !important;
+}

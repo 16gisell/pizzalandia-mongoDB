@@ -1,0 +1,26 @@
+<section class="menusCombos">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let ordenes of ordenPizza">
+                <div class="card card-coin card-plain">
+                    <div class="card-header">
+                        <img src="../../../assets/image/pizzas.png" style="margin-bottom: -4%;" class="img-center img-fluid">
+                        <div class="id-combo">
+                            <p>{{ordenes.id}}</p>
+                        </div>
+                    </div>
+                    <!-- <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <h4 class="text-uppercase text-selection">{{ordenes.nameCombo}}</h4>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary btn-simple btn-selection" [routerLink]="['/ordenPizza',ordenes._id]">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

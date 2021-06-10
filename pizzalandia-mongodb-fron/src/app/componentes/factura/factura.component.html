@@ -1,0 +1,68 @@
+<section class="Facturas">
+    <div class="container" >
+        <form [formGroup]="ngForm" (ngSubmit)="buscar()" novalidate>
+            <div class="input-group">                
+                <div class="form-outline">                    
+                    <input id="search-focus"  formControlName="codigo" type="search" id="codigo"  name="codigo" class="form-control" [(ngModel)]="facturar.codigo" placeholder="Buscar codigo" />                    
+                </div>
+                <button type="submit" class="btn btn-primary">buscar </button>                
+            </div>
+        </form> 
+        <table class="table" *ngIf="activo ">
+            <thead class="thead-dark">
+                <tr class="tabla-head">
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre menu</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Elementos</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Accion</th>                      
+                    <th scope="col">Total pago</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let pago of buscados, index">
+                <tr class="tabla" *ngIf="pago.codigo_pedido == facturar.codigo">
+                    <th scope="row">{{pago.index}}</th>
+                    <th scope="row">{{pago.tipoMenu}}</th>
+                    <th scope="row">{{pago.cantidad}}</th> 
+                    <th scope="row">{{pago.Elementos}}</th>
+                    <th scope="row">{{pago.lugar_pedido}}</th>
+                    <th scope="row">{{pago.codigo_pedido}}</th>  
+                    <th scope="row">{{pago.Tipo_factura}}</th>                      
+                    <th scope="row">{{pago.totalPago}}</th>   
+                    <th scope="row">{{pago.fechaFactura | date: 'dd-MM-yyyy'}}</th>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr class="tabla-head">
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre menu</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Elementos</th>
+                    <th scope="col">Lugar</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Accion</th>                      
+                    <th scope="col">Total pago</th>
+                    <th scope="col">Fecha</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let pago of pedidos, index">
+                <tr class="tabla">
+                    <th scope="row">{{pago.index}}</th>
+                    <th scope="row">{{pago.tipoMenu}}</th>
+                    <th scope="row">{{pago.cantidad}}</th> 
+                    <th scope="row">{{pago.Elementos}}</th>
+                    <th scope="row">{{pago.lugar_pedido}}</th>
+                    <th scope="row">{{pago.codigo_pedido}}</th>  
+                    <th scope="row">{{pago.Tipo_factura}}</th>                      
+                    <th scope="row">{{pago.totalPago}}</th>   
+                    <th scope="row">{{pago.fechaFactura | date: 'dd-MM-yyyy'}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

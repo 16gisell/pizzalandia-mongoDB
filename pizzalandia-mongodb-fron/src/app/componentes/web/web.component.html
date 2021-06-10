@@ -1,0 +1,544 @@
+<section class="home" id="Home">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-sm-12 col-md-8">
+                <p class=" text-home">Menú al instante llega a nuestras tiendas sin esperar tanto paga desde nuestra aplicación ordena lo que se te apetece de
+                    todo  lo que te podemos ofrecer y solicita tu
+                    factura por correo
+                    electrónico rápido y practico.
+                    </p>
+            </div>
+            <div class="col-xs-4 col-sm-12 col-md-4">
+                <img src="../../../assets/image/pizzalogo.png" style="margin: 6vh 0px 0px 0px;" class="img-center img-fluid ">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="menus" id="Menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1 class="text-center title-menus">Menus</h1>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-coin card-plain">
+                    <div class="card-header">
+                        <img src="../../../assets/image/pizzas.png" style="margin-bottom: 10%;" class="img-center img-fluid">
+                        <h4 class="text-uppercase text-selection text-center text-menus">Pizzas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr class="tabla-head text-center" style="font-size: 13px;">
+                                            <th scope="col">#</th>
+                                            <th scope="col">Tipos y contenido de Pizzas</th>
+                                            <th scope="col">Precios</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="color: #080808; font-size: 13px; text-align: left;" *ngFor="let pago of pedidosPizzas">
+                                        <tr class="tabla">
+                                            <th scope="row">{{pago.idPizza}}</th>
+                                            <th scope="row"><span style="color: #ffb100; font-size: 14px;">{{pago.nombrePizza}} </span>{{pago.ingredientesPizza}}</th>
+                                            <th scope="row">{{pago.precios}}$</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-coin card-plain">
+                    <div class="card-header">
+                        <img src="../../../assets/image/combop1cervesa.png" style="margin-bottom: -6%;" class="img-center img-fluid">
+                        <h4 class="text-uppercase text-selection text-center text-menus">Combo</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr class="tabla-head text-center" style="font-size: 13px;">
+                                            <th scope="col">#</th>
+                                            <th scope="col">Tipos y contenido de combos</th>
+                                            <th scope="col">Precios</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="color: #080808; font-size: 13px; text-align: left;" *ngFor="let pago of pedidosCombos">
+                                        <tr class="tabla">
+                                            <th scope="row">{{pago.id}}</th>
+                                            <th scope="row"><span style="color: #ffb100; font-size: 14px;">{{pago.nameCombo}}: </span>{{pago.elementCombo}}</th>
+                                            <th scope="row">{{pago.precioCombo}}$</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-coin card-plain">
+                    <div class="card-header">
+                        <img src="../../../assets/image/bebidas3.png" class="img-center img-fluid">
+                        <h4 class="text-uppercase text-selection text-center text-menus">Bebidas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <table class="table">
+                                    <thead class="thead-dark">
+                                        <tr class="tabla-head text-center" style="font-size: 13px;">
+                                            <th scope="col">#</th>
+                                            <th scope="col">Tipos y contenido de Bebidas</th>
+                                            <th scope="col">Precios</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="color: #080808; font-size: 13px; text-align: left;" *ngFor="let pago of pedidosBebidas">
+                                        <tr class="tabla">
+                                            <th scope="row">{{pago.idBebidas}}</th>
+                                            <th scope="row"><span style="color: #ffb100; font-size: 14px;">{{pago.nombreBebidas}}: </span>{{pago.contenido}}</th>
+                                            <th scope="row">{{pago.precioBebidas}}$</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pedido" id="Pedidos">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1 class="text-center title-menus">Solicitar un pedido</h1>
+            </div>
+            <div class="col-xs-4 col-sm-12 col-md-4">
+                <img src="../../../assets/image/pizzalogo3.png" class="img-center img-fluid ">
+            </div>
+            <div class="col-xs-8 col-sm-12 col-md-8">
+                <p class=" text-pedido">Has tus pedidos en solo 6 pasos, reducirá el tiempo de espera en la tienda y recibe tu factura por correo electrónico.
+
+                    6 pasos que solo tomara 2 minutos
+                    Fácil, fluido, sencillo,  practico, eficiente, porque como cliente valoramos tu tiempo. 
+                </p>
+                <div >
+                    <button type="button" class="btn btn-info btn-simple btn-selection" style=""  data-toggle="modal" data-target="#exampleModalCenter">
+                        Realizar pedido
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- ********************  seccion modal ********************* -->  
+  <!-- Modal1 -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso1</h5>
+                <p>Seleccione el menu que desea ordenar</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-coin card-plain">
+                                <button class="btn btn-primary btn-simple btn-selection" data-toggle="modal" data-target="#exampleModalCenter2" data-dismiss="modal">
+                                    <img src="../../../assets/image/pizzas.png" style="margin-bottom: -4%; height: 8vh;" class="img-center img-fluid">
+                                    <h6>Pizzas</h6>
+                                </button>   
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-coin card-plain">
+                                <button class="btn btn-primary btn-simple btn-selection" data-toggle="modal" data-target="#exampleModalCenter3" data-dismiss="modal">
+                                    <img src="../../../assets/image/combop1cervesa.png" style="margin-bottom: -4%;" class="img-center img-fluid">
+                                    <h6>Combos</h6>
+                                </button>     
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-coin card-plain">
+                                <button class="btn btn-primary btn-simple btn-selection" data-toggle="modal" data-target="#exampleModalCenter4" data-dismiss="modal">
+                                    <img src="../../../assets/image/bebidas3.png" style="margin-bottom: -4%;" class="img-center img-fluid">
+                                    <h6>Bebidas</h6>
+                                </button>     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal2  Contenido pizzas-->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso2</h5>
+                <p>Seleccione el tipo de menu Pizza que desea</p>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="tabla-head text-center" style="font-size: 13px;">
+                            <th scope="col">#</th>
+                            <th scope="col">Tipos y contenido de Pizzas</th>
+                            <th scope="col">Precios</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #080808; font-size: 13px; text-align: left;" *ngFor="let pago of pedidosPizzas">
+                        <tr class="tabla">
+                            <th scope="row">{{pago.idPizza}}</th>
+                            <th scope="row"><span style="color: #ffb100; font-size: 14px;">{{pago.nombrePizza}}: </span>{{pago.ingredientesPizza}}</th>
+                            <th scope="row">{{pago.precios}}$</th>
+                            <input type="checkbox" value="{{pago.nombrePizza}}" name="{{pago.ingredientesPizza}}" id="{{pago.precios}}" (change)="checkChange($event)" class="form-check-input">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal">Anterior</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter5" data-dismiss="modal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal3 contenido combos-->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso2</h5>
+                <p>Seleccione el tipo de menu que desea</p>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="tabla-head text-center" style="font-size: 13px;">
+                            <th scope="col">#</th>
+                            <th scope="col">Tipos y contenido de combos</th>
+                            <th scope="col">Precios</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #080808; font-size: 13px; text-align: left;" *ngFor="let pago of pedidosCombos">
+                        <tr class="tabla">
+                            <th scope="row">{{pago.id}}</th>
+                            <th scope="row"><span style="color: #ffb100; font-size: 14px;">{{pago.nameCombo}}: </span>{{pago.elementCombo}}</th>
+                            <th scope="row">{{pago.precioCombo}}$</th>
+                            <input type="checkbox" value="{{pago.nameCombo}}" name="{{pago.elementCombo}}" id="{{pago.precioCombo}}" (change)="checkChange($event)" class="form-check-input">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal">Anterior</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter5" data-dismiss="modal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal4  contenido bebidas-->
+<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso2</h5>
+                <p>Seleccione el tipo de menu que desea</p>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="tabla-head text-center" style="font-size: 13px;">
+                            <th scope="col">#</th>
+                            <th scope="col">Tipos y contenido de Bebidas</th>
+                            <th scope="col">Precios</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: #080808; font-size: 13px; text-align: left;" *ngFor="let pago of pedidosBebidas">
+                        <tr class="tabla">
+                            <th scope="row">{{pago.idBebidas}}</th>
+                            <th scope="row"><span style="color: #ffb100; font-size: 14px;">{{pago.nombreBebidas}}: </span>{{pago.contenido}}</th>
+                            <th scope="row">{{pago.precioBebidas}}$</th>
+                            <input type="checkbox" value="{{pago.nombreBebidas}}" name="{{pago.contenido}}" id="{{pago.precioBebidas}}" (change)="checkChange($event)" class="form-check-input">
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal">Anterior</button>
+                <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter6" data-dismiss="modal">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal5  formulario de pedidos que contienen pizzas-->
+<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">                
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso3</h5>
+                <p>Responda lo siguiente: </p>
+                <form [formGroup]="ngForm" (ngSubmit)="Verificar()">
+                    <div class="form-row">                        
+                        <label for="ingre" class="text_description">Cantidad de pizzas que desea </label>
+                        <div class="col-3">
+                            <input type="number" formControlName="cantidad" class="form-control" [(ngModel)]="facturar.cantidad">
+                            <div>
+                                <p *ngIf="this.ngForm.get('cantidad').errors?.required" class="alert alert-danger">
+                                    (agregue la cantidad que desea comprar)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align: left;">
+                        <label for="ingre" class="text_description">Tipo de pizza:  </label>
+                        <div class="form-check" *ngFor="let tamano of tamano">
+                            <input type="checkbox"  formControlName="tamaño" value="{{tamano.precioTamano}}" name="{{tamano.tipoTamano}}" (change)="selectTamano($event)" class="form-check-input">{{tamano.tipoTamano}}
+                        </div>
+                        <div>
+                            <p *ngIf="this.ngForm.get('tamaño').errors?.required" class="alert alert-danger">
+                                (agregue el tamaño de la pizza)
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label text_description" for="inlineCheckbox1">Desea agregar mas contenido a la pizza:  </label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="si" (change)="selection($event)"> Si
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="no" (change)="selection($event)"> No
+                        </div>
+                    </div>
+                    <div class="form-group" style="text-align: left;" *ngIf="selection2 === 'si'">
+                        <label for="ingre" class="text_description">Que elementos desea agregar:  </label>
+                        <div  class="form-check" *ngFor="let ingrediente of ingredientes">
+                            <input type="checkbox" value="{{ingrediente.precioIngrediente}}" name="{{ingrediente.nombreIngrediente}}" id="{{ingrediente.value}}" (change)="checkIngrediente($event)" class="form-check-input">{{ingrediente.nombreIngrediente}}
+                        </div>
+                    </div>                   
+                    <p>Necesitamos tus datos para la entrega del pedido: </p>
+                    <div class="form-group">
+                        <input type="text" name="nombre" formControlName="nombre" id="nombre" class="form-control" [(ngModel)]="facturar.name_usuario" placeholder="nombre" required>
+                        <div>
+                            <p *ngIf="this.ngForm.get('nombre').errors?.required" class="alert alert-danger">
+                                (El nombre no puede quedar vacío)
+                            </p>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <input type="email" formControlName="correo" name="correo" id="correo" class="form-control" [(ngModel)]="facturar.correo" placeholder="Correo" required>
+                        <div>
+                            <p *ngIf="this.ngForm.get('correo').errors?.required" class="alert alert-danger">
+                                (El correo no puede quedar vacío)
+                            </p>
+                            <p *ngIf="this.ngForm.get('correo').errors?.email" class="alert alert-danger">
+                                (El correo no es valido)
+                            </p>
+                        </div> 
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block btn-selection" *ngIf="activo">Verificar</button>                    
+                    <div class="col-xs-6 col-sm-12 col-md-12">
+                        <div *ngIf="errors">
+                            <div class="alert alert-danger" role="alert">
+                                {{errors}}
+                            </div>
+                        </div>
+                        <div *ngIf="aprovP">
+                            <div class="alert alert-success" role="alert">
+                                {{aprovP}}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal">Anterior</button>
+                <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter7" data-dismiss="modal" *ngIf="siguiente">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal6  formulario que contiene bebidas-->
+<div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso3</h5>
+                <p>Responda lo siguiente: </p>
+                <form [formGroup]="ngForm2" (ngSubmit)="verificarBebidas()">
+                    <div class="form-row">                        
+                        <label for="ingre" class="text_description">Cantidad de bebidas que desea </label>
+                        <div class="col-3">
+                            <input type="number" formControlName="cantidad" class="form-control" [(ngModel)]="facturar.cantidad">
+                            <div>
+                                <p *ngIf="this.ngForm2.get('cantidad').errors?.required" class="alert alert-danger">
+                                    (agregue la cantidad que desea comprar)
+                                </p>
+                            </div>
+                        </div>
+                    </div>                   
+                    <p>Necesitamos tus datos para la entrega del pedido: </p>
+                    <div class="form-group">
+                        <input type="text" name="nombre" formControlName="nombre" id="nombre" class="form-control" [(ngModel)]="facturar.name_usuario" placeholder="nombre" required>
+                        <div>
+                            <p *ngIf="this.ngForm2.get('nombre').errors?.required" class="alert alert-danger">
+                                (El nombre no puede quedar vacío)
+                            </p>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <input type="email" formControlName="correo" name="correo" id="correo" class="form-control" [(ngModel)]="facturar.correo" placeholder="Correo" required>
+                        <div>
+                            <p *ngIf="this.ngForm2.get('correo').errors?.required" class="alert alert-danger">
+                                (El correo no puede quedar vacío)
+                            </p>
+                            <p *ngIf="this.ngForm2.get('correo').errors?.email" class="alert alert-danger">
+                                (El correo no es valido)
+                            </p>
+                        </div> 
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block btn-selection" *ngIf="activo">Verificar</button>
+                    <div class="col-xs-6 col-sm-12 col-md-12">
+                        <div *ngIf="errors">
+                            <div class="alert alert-danger" role="alert">
+                                {{errors}} {{menssage}}
+                            </div>
+                        </div>
+                        <div *ngIf="aprovP">
+                            <div class="alert alert-success" role="alert">
+                                {{aprovP}}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter7" data-dismiss="modal" *ngIf="siguiente">Siguiente</button>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+<!-- Modal7 verificacion del pedido-->
+<div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso4</h5>
+                <p>verifiquemos y Confirmemos tu pedido  </p>      
+                <div style="text-align: left;">
+                    <p class="text_description">Su pedido contiene lo siguiente:  </p>       
+                    <p><span class="text_description">Descripcion:  </span>Usted ha solicitado {{facturar.cantidad}} {{facturar.tipoMenu}} que contiene {{facturar.Elementos}} <span *ngIf="facturar.ingredientesExtra !== '' ">con {{facturar.ingredientesExtra}} como ingredientes extras</span></p>  
+                    <p><span class="text_description">A nombre de  </span> {{facturar.name_usuario}}</p>  
+                    <p><span class="text_description">Con el siguiente correo   </span> {{facturar.correo}}</p>
+                    <p><span class="text_description">Total a pagar:   </span> {{facturar.totalPago}} $</p>
+                    <form FromComprar="ngForm" (ngSubmit)="Factura()">
+                        <button type="submit" class="btn btn-info btn-block btn-selection" *ngIf="facturacion">Facturar</button>
+                        <div class="col-xs-6 col-sm-12 col-md-12">
+                            <div *ngIf="errorsF">
+                                <div class="alert alert-danger" role="alert">
+                                    {{errorsF}}
+                                </div>
+                            </div>
+                            <div *ngIf="aprovPF">
+                                <div class="alert alert-success" role="alert">
+                                    {{aprovPF}}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>             
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter6" data-dismiss="modal">Anterior</button>
+                <button type="button" class="btn btn-primary"data-toggle="modal" data-target="#exampleModalCenter8" data-dismiss="modal"  *ngIf="siguiente2">Siguiente</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal8 Ultimo paso envio al correo-->
+<div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Formulario de Pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="modal-title" id="exampleModalLongTitle">Paso 5</h5>
+                <p>Ultimo paso  </p> 
+                <div style="color: rgb(255, 255, 255); text-align: justify;">
+                    <p>Tu código de pedido es: <span style="font-weight: 700; color: black;"> {{facturar.codigo_pedido}}</span> <br>  <br>
+
+                        Con este código solicita tu pedido en la tienda , una vez que llegues a nuestra tienda indícale al/la cajera(o) que este en servicio este código y procederá hacer el cobro del pedido. Una vez realizado el cobro se te entregara tu pedido.  
+                        
+                        <br><br> <span style="color: black;"> Muchas Gracias Por hacer el pedido en nuestra tienda esperemos que disfrutes del servicio y volvamos a verte pronto por acá. Pasa un excelente día!</span>
+                    </p> 
+                </div>      
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" data-dismiss="modal">Fin</button>
+            </div>
+        </div>
+    </div>
+</div>
